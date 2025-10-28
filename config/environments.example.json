@@ -1,0 +1,143 @@
+{
+  "defaults": {
+    "outputDir": "screenshots/regression",
+    "diffDir": "screenshots/regression/diff",
+    "paths": ["/", "/pricing"],
+    "threshold": {
+      "maxChangeRatio": 0.05,
+      "maxFailed": 0
+    },
+    "capture": {
+      "enabled": true,
+      "fullPage": true,
+      "device": "desktop",
+      "timeout": 45000
+    },
+    "comparison": {
+      "mode": "both",
+      "threshold": 0.1,
+      "limit": 50,
+      "normalizeStrategy": "crop"
+    },
+    "reports": {
+      "htmlPattern": "comparison-report*.html",
+      "jsonName": "comparison-summary.json"
+    }
+  },
+  "environments": {
+    "dev": {
+      "name": "Development",
+      "label": "Dev",
+      "baseUrlEnv": "DEV_BASE_URL",
+      "paths": ["/", "/pricing", "/features"],
+      "browser": {
+        "viewport": { "width": 1280, "height": 720 },
+        "device": "desktop"
+      },
+      "auth": {
+        "type": "basic",
+        "usernameEnv": "DEV_BASIC_AUTH_USER",
+        "passwordEnv": "DEV_BASIC_AUTH_PASS"
+      },
+      "notes": "Preview environment protected by basic auth."
+    },
+    "staging": {
+      "name": "Staging",
+      "label": "Staging",
+      "baseUrlEnv": "STAGING_BASE_URL",
+      "paths": ["/", "/pricing", "/checkout"],
+      "browser": {
+        "viewport": { "width": 1440, "height": 900 },
+        "device": "desktop",
+        "launchOptions": {
+          "timeout": 60000
+        }
+      },
+      "auth": {
+        "type": "bearer",
+        "tokenEnv": "STAGING_API_TOKEN"
+      }
+    },
+    "production": {
+      "name": "Production",
+      "label": "Production",
+      "baseUrlEnv": "PRODUCTION_BASE_URL",
+      "paths": ["/", "/pricing", "/checkout"],
+      "browser": {
+        "viewport": { "width": 1440, "height": 900 },
+        "device": "desktop"
+      }
+    }
+  },
+  "comparisons": {
+    "dev-vs-staging": {
+      "label": "Development vs Staging",
+      "description": "Validate new features in dev against staging before merge.",
+      "source": "dev",
+      "target": "staging",
+      "paths": "@source",
+      "threshold": {
+        "maxChangeRatio": 0.1,
+        "maxFailed": 1
+      },
+      "reports": {
+        "jsonName": "dev-staging-summary.json"
+      },
+      "requiredSecrets": [
+        "DEV_BASE_URL",
+        "DEV_BASIC_AUTH_USER",
+        "DEV_BASIC_AUTH_PASS",
+        "STAGING_BASE_URL",
+        "STAGING_API_TOKEN"
+      ]
+    },
+    "staging-vs-production": {
+      "label": "Staging vs Production",
+      "description": "Regression comparison before deploying to production.",
+      "source": "staging",
+      "target": "production",
+      "paths": ["/", "/pricing", "/checkout"],
+      "threshold": {
+        "maxChangeRatio": 0.02,
+        "maxFailed": 0
+      },
+      "reports": {
+        "jsonName": "staging-production-summary.json"
+      },
+      "requiredSecrets": [
+        "STAGING_BASE_URL",
+        "STAGING_API_TOKEN",
+        "PRODUCTION_BASE_URL"
+      ]
+    }
+  },
+  "documentation": {
+    "requiredEnvironmentVariables": [
+      {
+        "name": "DEV_BASE_URL",
+        "description": "HTTPS base URL for the development environment."
+      },
+      {
+        "name": "DEV_BASIC_AUTH_USER",
+        "description": "Basic auth username for the development environment."
+      },
+      {
+        "name": "DEV_BASIC_AUTH_PASS",
+        "description": "Basic auth password for the development environment."
+      },
+      {
+        "name": "STAGING_BASE_URL",
+        "description": "HTTPS base URL for the staging environment."
+      },
+      {
+        "name": "STAGING_API_TOKEN",
+        "description": "Bearer token for accessing protected staging routes."
+      },
+      {
+        "name": "PRODUCTION_BASE_URL",
+        "description": "HTTPS base URL for the production environment."
+      }
+    ],
+    "notes": "Copy this file to environments.json and replace environment variables with the actual deployment values as needed."
+  }
+}

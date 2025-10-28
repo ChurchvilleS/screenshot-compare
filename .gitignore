@@ -1,0 +1,56 @@
+# Dependency directories
+node_modules/
+**/node_modules/
+
+# Build artifacts
+dist/
+ui/dist/
+ui/.vite/
+**/.cache/
+**/.temp/
+
+# Playwright and test outputs
+playwright-report/
+test-results/
+ui/playwright-report/
+ui/test-results/
+ms-playwright/
+
+# Screenshot artifacts
+screenshots/
+
+# Coverage reports
+coverage/
+coverage-*/
+*.lcov
+
+# Environment and local config files
+.env
+.env.*
+!.env.example
+!.env.*.example
+config/environments.json
+
+# Logs and diagnostics
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+logs/
+
+# Editor and OS files
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/

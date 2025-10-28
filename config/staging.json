@@ -1,0 +1,20 @@
+{
+  "app": {
+    "name": "Screenshot Comparison Tool (Staging)"
+  },
+  "environments": [
+    {
+      "name": "staging",
+      "baseUrl": "https://staging.example.com"
+    }
+  ],
+  "storage": {
+    "retention": {
+      "maxPerEnvironment": 25,
+      "archiveDirName": "_archive"
+    }
+  },
+  "comparison": {
+    "normalizeStrategy": "crop"
+  }
+}

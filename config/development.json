@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "Screenshot Comparison Tool (Dev)"
+  },
+  "outputDir": "screenshots/dev",
+  "environments": [
+    {
+      "name": "local",
+      "baseUrl": "http://localhost:3000"
+    }
+  ],
+  "storage": {
+    "retention": {
+      "maxPerEnvironment": 10,
+      "archiveDirName": "_archive"
+    }
+  },
+  "comparison": {
+    "normalizeStrategy": "crop"
+  }
+}

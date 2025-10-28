@@ -1,0 +1,32 @@
+{
+  "app": {
+    "name": "Screenshot Comparison Tool",
+    "defaultEnvironment": "development"
+  },
+  "environments": [
+    {
+      "name": "staging",
+      "baseUrl": "https://staging.example.com"
+    },
+    {
+      "name": "production",
+      "baseUrl": "https://example.com"
+    }
+  ],
+  "outputDir": "screenshots",
+  "viewport": {
+    "width": 1280,
+    "height": 720
+  },
+  "comparison": {
+    "threshold": 0.2,
+    "diffDir": "screenshots/diff",
+    "normalizeStrategy": "crop"
+  },
+  "storage": {
+    "retention": {
+      "maxPerEnvironment": 20,
+      "archiveDirName": "_archive"
+    }
+  }
+}

@@ -1,0 +1,85 @@
+[
+  {
+    "id": "19328011-df0b-4360-a035-697f837aae04",
+    "title": "https://nytimes.com → https://cnn.com",
+    "status": "error",
+    "createdAt": "2025-10-28T14:45:41.809Z",
+    "updatedAt": "2025-10-28T14:46:08.200Z",
+    "reference": {
+      "name": "Reference",
+      "slug": null,
+      "baseUrl": "https://nytimes.com"
+    },
+    "target": {
+      "name": "Target",
+      "slug": null,
+      "baseUrl": "https://cnn.com"
+    },
+    "paths": [
+      "/"
+    ],
+    "reportTitle": "Reference vs Target",
+    "captureOptions": {
+      "outputDir": "screenshots/dev"
+    },
+    "comparisonOptions": {
+      "diffDir": "screenshots/diff",
+      "threshold": 0.2
+    },
+    "changeSummary": null,
+    "diffPercent": null,
+    "href": null,
+    "reportPath": null,
+    "reportRelativePath": null,
+    "errorMessage": "Image dimensions differ for path root-desktop-1280x720",
+    "startedAt": "2025-10-28T14:45:41.815Z",
+    "completedAt": "2025-10-28T14:46:08.200Z"
+  },
+  {
+    "id": "f80875b5-3bfa-401f-af7e-8fdbcb6c46cc",
+    "title": "https://nytimes.com → https://nytimes.com",
+    "status": "success",
+    "createdAt": "2025-10-28T18:05:28.267Z",
+    "updatedAt": "2025-10-28T18:07:12.953Z",
+    "reference": {
+      "name": "Reference",
+      "slug": null,
+      "baseUrl": "https://nytimes.com"
+    },
+    "target": {
+      "name": "Target",
+      "slug": null,
+      "baseUrl": "https://nytimes.com"
+    },
+    "paths": [
+      "/"
+    ],
+    "reportTitle": "Reference vs Target",
+    "captureOptions": {
+      "outputDir": "screenshots/dev"
+    },
+    "comparisonOptions": {
+      "diffDir": "screenshots/diff",
+      "threshold": 0.2,
+      "normalizeStrategy": "crop"
+    },
+    "changeSummary": "4.53% change",
+    "diffPercent": "4.53% change",
+    "href": "/artifacts/../diff/comparison-report_nytimescom-nytimescom_10-28-25_18-07pm.html",
+    "reportPath": "C:\\Users\\schurchv\\OneDrive - Capgemini\\Documents\\projects\\_A-B_vsCode\\screenshots\\diff\\comparison-report_nytimescom-nytimescom_10-28-25_18-07pm.html",
+    "reportRelativePath": "../diff/comparison-report_nytimescom-nytimescom_10-28-25_18-07pm.html",
+    "errorMessage": null,
+    "normalization": {
+      "strategy": "crop",
+      "width": 1280,
+      "height": 15699,
+      "count": 1,
+      "paths": [
+        "root-desktop-1280x720"
+      ],
+      "message": "Cropped to shared dimensions 1280x15699"
+    },
+    "startedAt": "2025-10-28T18:05:28.273Z",
+    "completedAt": "2025-10-28T18:07:12.953Z"
+  }
+]

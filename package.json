@@ -1,0 +1,73 @@
+{
+  "name": "screenshot-comparison-tool",
+  "version": "0.1.0",
+  "description": "A tool to capture and compare screenshots from different environments",
+  "main": "src/index.js",
+  "scripts": {
+    "setup": "node src/index.js setup",
+    "start": "node src/index.js",
+    "test": "jest --coverage",
+    "test:unit": "jest --selectProjects unit --coverage",
+    "test:integration": "jest --selectProjects integration --coverage",
+    "validate:tests": "node scripts/validate-test-coverage.js",
+    "validate:setup": "node scripts/validate-setup.js",
+    "validate:config": "node scripts/validate-config.js",
+    "validate:url": "node scripts/validate-url-builder.js",
+    "validate:screenshot": "node scripts/validate-screenshot-service.js",
+    "validate:file-manager": "node scripts/validate-file-manager.js",
+    "validate:comparison": "node scripts/validate-comparison.js",
+  "validate:live": "node scripts/validate-live-urls.js",
+    "validate:cli": "node scripts/validate-cli.js",
+    "validate:ci": "node scripts/validate-ci-integration.js",
+    "validate:env-config": "node scripts/validate-environment-config.js",
+    "validate:expectations": "node scripts/validate-expectations.js",
+    "validate:coverage": "node scripts/validate-coverage.js",
+    "prepare": "husky install",
+    "ui:dev": "vite --config ui/vite.config.js",
+    "ui:build": "vite build --config ui/vite.config.js",
+    "ui:preview": "vite preview --config ui/vite.config.js",
+    "ui:test": "playwright test --config ui/playwright.config.js",
+    "api:start": "node src/server.js"
+  },
+  "keywords": [
+    "playwright",
+    "screenshots",
+    "comparison",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20 || ^18"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "bootstrap": "^5.3.8",
+    "chalk": "^4.1.2",
+    "commander": "^11.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "pixelmatch": "^5.3.0",
+    "playwright": "^1.48.0",
+    "pngjs": "^7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "slugify": "^1.6.6"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-react": "^7.25.9",
+    "@playwright/test": "^1.48.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "babel-jest": "^29.7.0",
+    "husky": "^9.1.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^30.2.0",
+    "supertest": "^7.1.4",
+    "vite": "^5.4.8"
+  }
+}

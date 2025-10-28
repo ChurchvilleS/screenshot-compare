@@ -1,0 +1,55 @@
+Website Crawling Feature Requirements
+To extend the app to crawl both websites and capture all views of multipage sites, we would need to implement:
+
+Backend Enhancements
+Crawler Service
+
+Recursive link discovery algorithm that respects domain boundaries
+Queue management for discovered URLs with depth limiting
+Duplicate URL detection to prevent infinite loops
+Configurable crawl rules (include/exclude patterns, max depth, max pages)
+Rate limiting to prevent server overload
+Storage Adaptations
+
+Hierarchical storage structure for potentially hundreds of screenshots
+Metadata index to track crawl relationships between pages
+Efficient comparison mapping between reference and target site structures
+Processing Pipeline
+
+Parallel processing capabilities for faster crawling
+Progress tracking for long-running crawls
+Resumable crawls in case of interruption
+Frontend Additions
+Crawl Configuration UI
+
+Starting URL inputs with domain boundary controls
+Crawl depth and breadth limiters
+URL pattern filters (include/exclude)
+Crawl speed/concurrency settings
+Monitoring Interface
+
+Real-time crawl progress visualization
+Page discovery tree/graph view
+Pause/resume/cancel controls
+Results Navigation
+
+Site map visualization showing crawled pages
+Filtering and sorting of comparison results
+Batch actions for reviewing multiple comparisons
+Summary statistics (total pages, error rate, difference rate)
+Technical Considerations
+Performance Optimization
+
+Worker threads or clustering for parallel processing
+Streaming results to avoid memory limitations
+Incremental comparison to handle large sites
+Reliability
+
+Robust error handling for network issues
+Retry mechanisms for transient failures
+Timeout handling for slow-loading pages
+Security & Ethics
+
+Respect for robots.txt directives
+Authentication handling for protected areas
+User-agent identification

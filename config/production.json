@@ -1,0 +1,21 @@
+{
+  "app": {
+    "name": "Screenshot Comparison Tool"
+  },
+  "environments": [
+    {
+      "name": "production",
+      "baseUrl": "https://example.com"
+    }
+  ],
+  "comparison": {
+    "threshold": 0.15,
+    "normalizeStrategy": "crop"
+  },
+  "storage": {
+    "retention": {
+      "maxPerEnvironment": 50,
+      "archiveDirName": "_archive"
+    }
+  }
+}
