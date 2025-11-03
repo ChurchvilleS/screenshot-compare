@@ -1,0 +1,113 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "Configuration for enhanced diff highlighting in screenshot comparisons",
+  
+  "highlightMode": "border",
+  "highlightModeOptions": ["content-only", "position-only", "all", "border", "overlay", "both"],
+  "highlightModeDescription": {
+    "content-only": "Highlight only regions where content has changed",
+    "position-only": "Highlight only regions that shifted position without content change",
+    "all": "Highlight all differences including position shifts",
+    "border": "Draw borders around changed regions",
+    "overlay": "Apply semi-transparent color overlay to changed regions",
+    "both": "Use both borders and overlays"
+  },
+
+  "sensitivity": {
+    "verticalTolerance": 50,
+    "horizontalTolerance": 20,
+    "minRegionHeight": 100,
+    "minRegionWidth": 50,
+    "similarityThreshold": 0.9,
+    "matchThreshold": 0.8,
+    "description": {
+      "verticalTolerance": "Maximum vertical displacement (in pixels) to tolerate before flagging as change",
+      "horizontalTolerance": "Maximum horizontal displacement (in pixels) to tolerate before flagging as change",
+      "minRegionHeight": "Minimum height (in pixels) for a region to be analyzed",
+      "minRegionWidth": "Minimum width (in pixels) for a region to be analyzed",
+      "similarityThreshold": "Threshold (0-1) for considering content similar enough to be 'unchanged'",
+      "matchThreshold": "Threshold (0-1) for matching regions between reference and target images"
+    }
+  },
+
+  "visualStyle": {
+    "borderWidth": 2,
+    "borderStyle": "solid",
+    "overlayOpacity": 0.3,
+    "changeColors": {
+      "insert": "#28a745",
+      "delete": "#dc3545",
+      "modify": "#ffc107",
+      "shift": "#007bff"
+    },
+    "colorDescriptions": {
+      "insert": "Green - New content added (insertion)",
+      "delete": "Red - Existing content removed (deletion)",
+      "modify": "Yellow - Content changed in-place (modification)",
+      "shift": "Blue - Content moved without changes (position shift)"
+    }
+  },
+
+  "detection": {
+    "segmentationStrategy": "horizontal",
+    "segmentationStrategyOptions": ["horizontal", "grid", "edge-detection", "color-clustering"],
+    "segmentationStrategyDescription": {
+      "horizontal": "Segment image into horizontal bands (simple, fast)",
+      "grid": "Segment image into grid cells (more granular)",
+      "edge-detection": "Use edge detection to identify content boundaries (more accurate)",
+      "color-clustering": "Group similar colors to identify content blocks (adaptive)"
+    },
+    "edgeDetectionThreshold": 50,
+    "colorClusteringTolerance": 30,
+    "gridCellSize": 128
+  },
+
+  "comparison": {
+    "method": "ssim",
+    "methodOptions": ["ssim", "histogram", "pixel", "hybrid"],
+    "methodDescription": {
+      "ssim": "Structural Similarity Index - Best for perceptual comparison",
+      "histogram": "Color histogram comparison - Fast, good for layout detection",
+      "pixel": "Direct pixel comparison - Most accurate for identical content",
+      "hybrid": "Combination of methods for balanced results"
+    },
+    "normalizeSize": true,
+    "ignoreAntiAliasing": true
+  },
+
+  "performance": {
+    "enableCaching": true,
+    "maxConcurrentRegions": 10,
+    "timeoutMs": 30000,
+    "maxImageDimension": 4096
+  },
+
+  "output": {
+    "generateSummary": true,
+    "includeRegionMetadata": true,
+    "saveIntermediateSteps": false,
+    "annotationStyle": "minimal",
+    "annotationStyleOptions": ["minimal", "detailed", "developer", "stakeholder"],
+    "annotationStyleDescription": {
+      "minimal": "Just highlight colors, no labels",
+      "detailed": "Include labels, metrics, and change descriptions",
+      "developer": "Technical details for debugging",
+      "stakeholder": "Business-friendly explanations"
+    }
+  },
+
+  "reporting": {
+    "includeChangeNavigation": true,
+    "showChangeTypeBreakdown": true,
+    "generateHeatmap": false,
+    "exportFormat": ["html", "json"],
+    "embedImages": true
+  },
+
+  "experimental": {
+    "enableMachineLearning": false,
+    "useGPUAcceleration": false,
+    "adaptiveThresholds": false,
+    "description": "Experimental features that may not be stable"
+  }
+}
