@@ -20,13 +20,19 @@ Introduce a lightweight HTML interface that allows teams to trigger captures, ru
 - Deployment guide documents local, reverse-proxy, and direct hosting workflows with environment examples.
 - Git repository initialized after completing .gitignore hardening and secrets audit (ready for initial commit preparation).
 - Repository status reviewed to catalog files for the inaugural commit.
+- Project files staged for the initial commit snapshot.
+- Initial commit created capturing the full MVP baseline.
+- GitHub repository creation steps documented for publishing workflow.
+- Origin remote configured and initial commit pushed to `ChurchvilleS/screenshot-compare`.
+- Branch protection rules drafted for the default branch to enforce PR-based changes.
+- Repository synchronized with `origin/master`; review deleted/modified docs and merge PR `copilot/review-docs-and-code` if desired.
 
 ## Current Challenges
 - Operationalize the live validation workflow (schedule runs, alert on regressions) while monitoring Playwright session duration and storage growth trends.
 - Node version mismatch warnings resolved by pinning engines (`>=20 || ^18`) and adding `.nvmrc` guidance.
 - Define production-ready configuration for the API base URL (env variables, reverse proxy) so the UI and server stay aligned outside local development.
 - Execute staged coverage recovery plan (raise Jest thresholds 22% → 28% → 34% → 40% as suites land) focusing on API handlers, normalization flows, UI components, and service scripts.
-- Finalize initial commit message, staging strategy, and remote setup using the reviewed git status as input.
+- Implement the branch protection settings in GitHub, invite collaborators, and plan deployment/testing automation for the hosted repository.
 
 ## Milestones
 1. **Requirements Gathering**
