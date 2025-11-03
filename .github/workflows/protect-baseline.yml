@@ -1,0 +1,39 @@
+name: Protect Performance Baseline
+
+on:
+  pull_request:
+    paths:
+      - 'performance-baseline.json'
+
+jobs:
+  require-baseline-approval:
+    name: Require Baseline Approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check for approval comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const { owner, repo } = context.repo;
+            const pullNumber = context.payload.pull_request.number;
+            const { data: reviews } = await github.rest.pulls.listReviews({
+              owner,
+              repo,
+              pull_number: pullNumber,
+              per_page: 100
+            });
+
+            const approved = reviews.some((review) => {
+              if (review.state !== 'APPROVED') {
+                return false;
+              }
+              if (!review.body) {
+                return false;
+              }
+              return review.body.includes('BASELINE-UPDATE-APPROVED');
+            });
+
+            if (!approved) {
+              core.setFailed('performance-baseline.json was modified without an approved review containing "BASELINE-UPDATE-APPROVED".');
+            }

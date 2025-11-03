@@ -23,3 +23,10 @@ A Playwright-driven CLI that captures paired screenshots, runs pixel-level compa
 5. After either command, open the printed report path or run `node scripts/validate-comparison.js` to list the freshest artifact.
 
 See `docs/WORKFLOW-GUIDE.md` for detailed prompts and `docs/users-guide.md` for a non-technical walkthrough.
+
+## Performance Baselines
+- Run `node --expose-gc scripts/capture-performance-baseline.js` from a clean worktree to generate `performance-baseline.json` and `PERFORMANCE-BASELINE.md`.
+- The script captures execution time, memory usage, and per-step metrics across representative test cases, tagging each run with the active git commit.
+- Update the baseline only when intentional algorithmic or infrastructure changes materially affect performance. Obtain a code review that includes the phrase `BASELINE-UPDATE-APPROVED` before merging baseline changes.
+- Current baseline commit: `pending-initial-capture` (update this line immediately after publishing a new baseline).
+- Review the latest human-readable report at [`PERFORMANCE-BASELINE.md`](./PERFORMANCE-BASELINE.md) and consult `performance-baseline.json` for machine-readable comparisons.
