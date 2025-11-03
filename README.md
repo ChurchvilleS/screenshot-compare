@@ -28,5 +28,5 @@ See `docs/WORKFLOW-GUIDE.md` for detailed prompts and `docs/users-guide.md` for 
 - Run `node --expose-gc scripts/capture-performance-baseline.js` from a clean worktree to generate `performance-baseline.json` and `PERFORMANCE-BASELINE.md`.
 - The script captures execution time, memory usage, and per-step metrics across representative test cases, tagging each run with the active git commit.
 - Update the baseline only when intentional algorithmic or infrastructure changes materially affect performance. Obtain a code review that includes the phrase `BASELINE-UPDATE-APPROVED` before merging baseline changes.
-- Current baseline commit: `pending-initial-capture` (update this line immediately after publishing a new baseline).
+- Current baseline commit: `88488a2996ce39a93d1a6b91c8269c9e763258d9`.
 - Review the latest human-readable report at [`PERFORMANCE-BASELINE.md`](./PERFORMANCE-BASELINE.md) and consult `performance-baseline.json` for machine-readable comparisons.

@@ -1,0 +1,328 @@
+{
+  "meta": {
+    "timestamp": "2025-11-03T23:54:43.881Z",
+    "commit": "88488a2996ce39a93d1a6b91c8269c9e763258d9",
+    "node": "v19.4.0",
+    "os": {
+      "platform": "win32",
+      "release": "10.0.26100",
+      "arch": "x64",
+      "cpu": "Intel(R) Core(TM) i7-8850H CPU @ 2.60GHz"
+    },
+    "iterations": 5
+  },
+  "cases": [
+    {
+      "id": "mobile-minimal-diff",
+      "description": "375px mobile viewport with minor textual change",
+      "dimensions": {
+        "width": 375,
+        "height": 667
+      },
+      "pathSegment": "/mobile-minimal",
+      "summary": {
+        "totalTimeMs": {
+          "average": 53.02904000133276,
+          "min": 39.006999999284744,
+          "max": 76.4455000013113,
+          "median": 48.67670000344515
+        },
+        "loadTimeMs": {
+          "average": 35.306079998612404,
+          "min": 27.063799999654293,
+          "max": 40.80229999870062,
+          "median": 39.12969999760389
+        },
+        "normalizeTimeMs": {
+          "average": 0,
+          "min": 0,
+          "max": 0,
+          "median": 0
+        },
+        "diffTimeMs": {
+          "average": 17.655099999904632,
+          "min": 7.815399996936321,
+          "max": 37.210299998521805,
+          "median": 14.425599999725819
+        },
+        "timePerPixelNs": {
+          "average": 212.0101549278671,
+          "min": 155.95002498464666,
+          "max": 305.62918541253896,
+          "median": 194.60949526614752
+        },
+        "changeRatio": {
+          "average": 0.03246376811594203,
+          "min": 0.03246376811594203,
+          "max": 0.03246376811594203,
+          "median": 0.03246376811594203
+        },
+        "memoryRssMb": {
+          "average": 83.61953125,
+          "min": 82.83984375,
+          "max": 84.140625,
+          "median": 83.72265625,
+          "peak": 84.140625
+        },
+        "memoryHeapMb": {
+          "average": 21.24193115234375,
+          "min": 18.935104370117188,
+          "max": 22.17279052734375,
+          "median": 22.019554138183594,
+          "peak": 22.17279052734375
+        }
+      }
+    },
+    {
+      "id": "tablet-layout-shift",
+      "description": "768px tablet viewport with layout shift and minimal content change",
+      "dimensions": {
+        "width": 768,
+        "height": 1024
+      },
+      "pathSegment": "/tablet-shift",
+      "summary": {
+        "totalTimeMs": {
+          "average": 90.45382000207901,
+          "min": 77.11850000172853,
+          "max": 103.91200000047684,
+          "median": 91.62250000238419
+        },
+        "loadTimeMs": {
+          "average": 63.43652000129223,
+          "min": 56.2111000046134,
+          "max": 67.98000000417233,
+          "median": 64.87099999934435
+        },
+        "normalizeTimeMs": {
+          "average": 0,
+          "min": 0,
+          "max": 0,
+          "median": 0
+        },
+        "diffTimeMs": {
+          "average": 26.992099997401237,
+          "min": 16.186099998652935,
+          "max": 47.680500000715256,
+          "median": 23.934999994933605
+        },
+        "timePerPixelNs": {
+          "average": 115.01797994242224,
+          "min": 98.0612436952318,
+          "max": 132.13094075581466,
+          "median": 116.50403340960717
+        },
+        "changeRatio": {
+          "average": 0.07120768229166667,
+          "min": 0.07120768229166667,
+          "max": 0.07120768229166667,
+          "median": 0.07120768229166667
+        },
+        "memoryRssMb": {
+          "average": 87.25,
+          "min": 82.3828125,
+          "max": 91.24609375,
+          "median": 86.109375,
+          "peak": 91.24609375
+        },
+        "memoryHeapMb": {
+          "average": 19.844570922851563,
+          "min": 16.917282104492188,
+          "max": 23.69965362548828,
+          "median": 18.056243896484375,
+          "peak": 23.69965362548828
+        }
+      }
+    },
+    {
+      "id": "desktop-content-change",
+      "description": "1280px desktop viewport with significant content differences",
+      "dimensions": {
+        "width": 1280,
+        "height": 720
+      },
+      "pathSegment": "/desktop-diff",
+      "summary": {
+        "totalTimeMs": {
+          "average": 103.32936000227929,
+          "min": 99.5717000067234,
+          "max": 111.18969999998808,
+          "median": 101.76759999990463
+        },
+        "loadTimeMs": {
+          "average": 68.37122000008821,
+          "min": 63.521600000560284,
+          "max": 75.7774000018835,
+          "median": 67.52679999917746
+        },
+        "normalizeTimeMs": {
+          "average": 0,
+          "min": 0,
+          "max": 0,
+          "median": 0
+        },
+        "diffTimeMs": {
+          "average": 34.92513999938965,
+          "min": 31.630800001323223,
+          "max": 37.6908999979496,
+          "median": 35.36209999769926
+        },
+        "timePerPixelNs": {
+          "average": 112.1195312524732,
+          "min": 108.04220920868426,
+          "max": 120.64854600693151,
+          "median": 110.42491319434096
+        },
+        "changeRatio": {
+          "average": 0.77734375,
+          "min": 0.77734375,
+          "max": 0.77734375,
+          "median": 0.77734375
+        },
+        "memoryRssMb": {
+          "average": 91.296875,
+          "min": 85.4453125,
+          "max": 96.5234375,
+          "median": 89.51953125,
+          "peak": 96.5234375
+        },
+        "memoryHeapMb": {
+          "average": 16.758990478515624,
+          "min": 16.580047607421875,
+          "max": 16.97449493408203,
+          "median": 16.65496063232422,
+          "peak": 16.97449493408203
+        }
+      }
+    },
+    {
+      "id": "desktop-complex-page",
+      "description": "1440px desktop viewport with dense content and moderate differences",
+      "dimensions": {
+        "width": 1440,
+        "height": 900
+      },
+      "pathSegment": "/desktop-complex",
+      "summary": {
+        "totalTimeMs": {
+          "average": 140.1418399989605,
+          "min": 122.85209999978542,
+          "max": 152.1240999996662,
+          "median": 142.16160000115633
+        },
+        "loadTimeMs": {
+          "average": 95.86972000002861,
+          "min": 93.23599999397993,
+          "max": 100.4100000038743,
+          "median": 95.41250000149012
+        },
+        "normalizeTimeMs": {
+          "average": 0,
+          "min": 0,
+          "max": 0,
+          "median": 0
+        },
+        "diffTimeMs": {
+          "average": 44.23190000206232,
+          "min": 27.400499999523163,
+          "max": 57.49149999767542,
+          "median": 41.7546000033617
+        },
+        "timePerPixelNs": {
+          "average": 108.13413580166704,
+          "min": 94.79328703687146,
+          "max": 117.3797067898659,
+          "median": 109.69259259348482
+        },
+        "changeRatio": {
+          "average": 0.13580246913580246,
+          "min": 0.13580246913580246,
+          "max": 0.13580246913580246,
+          "median": 0.13580246913580246
+        },
+        "memoryRssMb": {
+          "average": 106.90625,
+          "min": 104.4609375,
+          "max": 112.0078125,
+          "median": 106.58203125,
+          "peak": 112.0078125
+        },
+        "memoryHeapMb": {
+          "average": 20.774565124511717,
+          "min": 17.002792358398438,
+          "max": 22.721458435058594,
+          "median": 21.19457244873047,
+          "peak": 22.721458435058594
+        }
+      }
+    },
+    {
+      "id": "large-diff-heavy",
+      "description": "1920px wide hero page with extensive differences",
+      "dimensions": {
+        "width": 1920,
+        "height": 1080
+      },
+      "pathSegment": "/hero-heavy",
+      "summary": {
+        "totalTimeMs": {
+          "average": 235.25679999887944,
+          "min": 206.3804999962449,
+          "max": 253.73460000008345,
+          "median": 235.86620000004768
+        },
+        "loadTimeMs": {
+          "average": 149.55383999943734,
+          "min": 137.7685999944806,
+          "max": 168.84340000152588,
+          "median": 146.81220000237226
+        },
+        "normalizeTimeMs": {
+          "average": 0,
+          "min": 0,
+          "max": 0,
+          "median": 0
+        },
+        "diffTimeMs": {
+          "average": 85.63843999952078,
+          "min": 68.55380000174046,
+          "max": 98.03680000454187,
+          "median": 84.83579999953508
+        },
+        "timePerPixelNs": {
+          "average": 113.45331790069417,
+          "min": 99.52763310004094,
+          "max": 122.36429398152173,
+          "median": 113.74720293212177
+        },
+        "changeRatio": {
+          "average": 0.714891975308642,
+          "min": 0.714891975308642,
+          "max": 0.714891975308642,
+          "median": 0.714891975308642
+        },
+        "memoryRssMb": {
+          "average": 125.7546875,
+          "min": 106.125,
+          "max": 138.9609375,
+          "median": 137.6484375,
+          "peak": 138.9609375
+        },
+        "memoryHeapMb": {
+          "average": 19.173663330078124,
+          "min": 17.1290283203125,
+          "max": 23.514999389648438,
+          "median": 17.15093231201172,
+          "peak": 23.514999389648438
+        }
+      }
+    }
+  ],
+  "summary": {
+    "averageTotalTimeMs": 124.44,
+    "peakTotalTimeMs": 253.73,
+    "slowestCaseId": "large-diff-heavy",
+    "peakRssMb": 138.96,
+    "peakHeapMb": 23.7
+  }
+}
